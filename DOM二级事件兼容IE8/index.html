@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+	<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+	<script src="js/scripts.js" type="text/javascript" defer></script>
+<script>
+eruda.init();
+console.log('控制台打印信息');
+</script>
+	
+  </head>
+  <body>
+	<div id="parent">我是父亲
+	  <div id="child">我是儿子</div>
+	</div>
+	<a href="http://www.baidu.com">百度一下</a>
+  </body>
+  <script type="text/javascript">
+	//定义一个对象
+	var EventUtil={
+	//绑定事件，兼容所有浏览器
+	addHandler:function(element,type,handler){
+	if(element.addEventListener){
+	element.addEventListener(type,handler,false);
+	}
+	else if(element.attachEvent){
+	element.attachEvent("on"+type,handler,false);
+	}
+	},
+	//移除事件，兼容所有浏览器
+	removeHandler:function(element,type,handler){
+	if(element.removeEventListener){
+	element.removeEventListener(type,handler,false);
+	}
+	else if(element.detachEvent){
+	element.detachEvent("on"+type,handler,false);
+	}
+	},
+	//返回当前点击的元素
+	getTarage:function(e){
+	return e.target||e.srcElement;
+	},
+	//阻止默认行为，比如a标签的跳转
+	preventDefault:function(e){
+	if(e.preventDefault){e.preventDefault();}
+	else{e.returnValue=false;}
+	},
+	//阻止冒泡
+	stopPropagation:function(e){
+	if(e.stopPropagation){e.stopPropagation();}
+	else{e.cancelBubble=true;}
+	}
+	
+	};
+	
+	//测试
+	var parents=document.getElementById("parent");
+	EventUtil.addHandler(parents,"click",function(){alert("我是父亲");});
+	
+	var childs=document.getElementById("child");
+	//把函数定义在外部，如果以后想解绑事件，函数必须定义在外部
+	function onclicks(event){alert("事件句柄成功触发");
+	//返回当前点击元素
+	var a=EventUtil.getTarage(event);console.log(a);
+	//阻止冒泡
+	EventUtil.stopPropagation(event);
+	}
+	
+	//给childs绑定事件，第三个参数调用外部函数，也可以直接写函数
+	EventUtil.addHandler(childs,"click",onclicks);
+	//EventUtil.removeHandler(childs,"click",onclicks);
+	
+	//阻止a标签默认行为
+	var b=document.getElementsByTagName("a")[0];
+	EventUtil.addHandler(b,"click",function(event){EventUtil.preventDefault(event);});
+	
+	
+	
+	 </script>
+</html>		

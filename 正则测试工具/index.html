@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+	  <script src="js/scripts.js" type="text/javascript" defer></script>
+	<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script>
+eruda.init();
+console.log('控制台打印信息');
+</script>
+  </head>
+  <body>
+
+    <section>
+		<h4>正则表达式测试工具</h4>
+	  <textarea placeholder="请输入文本"></textarea>
+	  <span>正则表达式:</span>
+	  <input class="ipt" type="text" placeholder="请输入要匹配的字符"/>
+		 <div id="a">
+	  <input type="checkbox" value="i"/>忽略大小写
+	  <input type="checkbox" value="g"/>全局匹配
+	  <input type="checkbox" value="m"/>多行匹配
+		 </div>
+	  <button>开始匹配</button>
+	  <p>匹配结果<p/>
+	  <div class="jg"></div>
+	  <span>替换匹配结果:</span>
+	  <input class="ipt" type="text" placeholder="请输入要替换的字符"/>
+	  <button>替换</button>
+	  <div class="jg"></div>
+	</section>
+
+	<aside>
+	  <dl id="dl">
+		<dt>常用正则</dt>
+		<dd title="正则1">正则1</dd>
+		<dd title="正则2">正则2</dd>
+		<dd title="正则3">正则3</dd>
+		<dd title="正则4">正则4</dd>
+	  </dl>
+	</aside>
+  </body>
+</html>		

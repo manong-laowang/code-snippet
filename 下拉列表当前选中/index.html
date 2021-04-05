@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+	  <script src="js/scripts.js" type="text/javascript" defe="defe"></script>
+  </head>
+  <script>
+  window.onload=function(){
+  var bj=document.getElementById("a");
+      bj.onchange=function(){
+   //如何获取下拉列表当前选中value
+  //方法1:如下这里this表示对当前对象的引用
+  //就是bj这个对象
+      var bg=this.value;
+          document.body.style.background=bg;
+  
+ 
+  //方法2:如下bj.options表示bj对象下
+  //所有option的集合,bj.selectedIndex
+  //可以返回被选中项的索引号
+ // var bg=bj.options[bj.selectedIndex].value;
+//  document.body.style.background=bg;
+ };
+  };
+  </script>
+  <body>
+    <select name="" id="a">
+	  <option value="#fff">白色</option>
+	  <option value="red">红色</option>
+	  <option value="#886">棕色</option>
+	</select>
+	
+	
+  </body>
+</html>		
