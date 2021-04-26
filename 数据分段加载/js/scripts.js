@@ -43,20 +43,3 @@ io.observe(a);
 }
 
 
-/*
-
-var a=document.getElementsByClassName("a")[0];
-var io=new IntersectionObserver(function(e){
-	console.log(e[0].intersectionRatio);
-});
-io.observe(a);
-
-
-
-
-for(var i=d.user.length-1;i>=0;i--){
-	var divs=document.createElement("div");
-divs.innerHTML='<a href="'+d.user[i].url+'"><img src="'+d.user[i].png+'"/><h2>'+d.user[i].name+'</h2><span>分类:'+d.user[i].sortname+'</span><br/><span>软件大小:'+d.user[i].appdx+'</span><br/><span>更新时间:'+d.user[i].time+'</span></a>';
-	coson.appendChild(divs);	
-}
-*/
