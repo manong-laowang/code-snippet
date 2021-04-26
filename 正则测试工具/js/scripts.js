@@ -38,10 +38,3 @@ dl.addEventListener("click",function(event){
 }();
 
 
-/*
-var w="<span clasd='a b' id='c' style=''>你好</span><div></div>";
-var c=/<\/?\w+(\s+\w+=.*?)?>/g;
-var f=/<.*?>/g;
-alert(w.match(c));
-alert(w.match(f));
-*/
