@@ -58,6 +58,7 @@
 		if (method === "get" && datas != "")
 		{
 			url = url + "?" + datas;
+			datas=null;
 		}   
 
 		xhr.onreadystatechange = function() {
