@@ -13,6 +13,8 @@ li{
 span{
   display:inline-block;
   width:107px;height:107px;
+  /*设置初始状态，防止bug*/
+  transform:rotate(0deg);
   transition:transform 1s ease .1s;
 }
 .a{
