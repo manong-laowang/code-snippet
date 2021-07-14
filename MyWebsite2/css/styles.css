@@ -1,0 +1,61 @@
+/*舞台，必须设置perspective*/
+.wt{
+  width:1000px;height:700px;
+  border:1px solid Black;
+  position:relative;
+  perspective:2000px;
+}
+/*要旋转的容器，必须设置transform-style: preserve-3d;*/
+/*这样容器才能有3D效果*/
+.content{
+  width:300px;height:300px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-150px;
+  margin-top:-150px;
+  transform-style: preserve-3d;
+  transition:all 20s ease 0s;
+}
+/*先让所有元素重叠在一起*/
+.content div{
+  width:300px;height:300px;
+  color:#fff;
+  font-size:40px;
+  position:absolute;
+}
+/*背面，需要往后位移(使用绝对定位的元素是后来居上，所以这是最下面的一个)*/
+.a{
+  background-color:red;
+  transform: translateZ(-150px);
+}
+/*右侧面，Y轴旋转-90度，在往后位移*/
+.b{
+  background-color:green;
+  transform: rotateY(90deg) translateZ(-150px);
+}
+/*左侧面，Y轴旋转90度，在往前位移*/
+.c{
+  background-color:Orange;
+ transform: rotateY(90deg) translateZ(150px);
+}
+/*底面，X轴旋转90度，在往后位移*/
+.d{
+  background-color:#885;
+ transform: rotateX(90deg) translateZ(-150px);
+}
+/*顶面，X轴旋转90度，在往前位移*/
+.e{
+  background-color:#558;
+  transform: rotateX(90deg) translateZ(150px);
+}
+/*正面，往前位移*/
+.f{
+  background-color:#868;
+ transform: translateZ(150px);
+}
+
+.content:hover{
+  transform: rotateX(720deg) rotateY(720deg);
+}
+
